@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>サイコロ</title>
+</head>
+<body>
+    <title></title>
+
+    <p>
+        <img id="saikoro" name="saikoro" src="saikoro_1.png"><br>
+        <input type="button" value="サイコロを振る" onclick="shake()">
+    </p>
+    
+    <p>
+        <input type="button" id="btnSub" value="-" onclick="suba()">
+        <input type="text" name="counter" id="counter" value="0">   
+        <input type="button" id="btnAdd" value="+" onclick="adder()"> 
+    </p>
+        <input type="button" id="reset" value="リセット" onclick="reset()">
+
+    <script>
+        function shake() {
+            do {
+                var random = Math.floor( Math.random() * 7 );
+            } while (random==0);
+        
+            if(random==1){
+                document.getElementById("saikoro").src="saikoro_1.png";    
+            }else if (random==2) {
+                document.getElementById("saikoro").src="saikoro_2.png";
+            }else if (random==3) {
+                document.getElementById("saikoro").src="saikoro_3.png";
+            }else if (random==4) {
+                document.getElementById("saikoro").src="saikoro_4.png";
+            }else if (random==5) {
+                document.getElementById("saikoro").src="saikoro_5.png";
+            }else if (random==6) {
+                document.getElementById("saikoro").src="saikoro_6.png";
+            }else{
+                document.getElementById("saikoro").src="saikoro_1.png";
+            }
+        }
+
+        function suba() {
+            document.getElementById("counter").value--;
+        }
+
+        function adder() {
+            document.getElementById("counter").value++;
+        }
+
+        function reset() {
+            document.getElementById("counter").value=0;
+        }
+    </script>
+</body>
+</html>
